@@ -69,6 +69,24 @@ public class LogAnalyzer
     }
     
     /**
+     * Return the quietest hour.
+     */
+    public int quietestHour()
+    {
+      int quietest = hourCounts[0];
+      int quietestHour = 0;
+        
+        for(int hour = 0; hour < hourCounts.length; hour++) {
+            if (quietest > hourCounts[hour])
+            {
+                quietest = hourCounts[hour];
+                quietestHour= hour;
+            }
+        }
+         return quietestHour;  
+    }
+    
+    /**
      * Print the hourly counts.
      * These should have been set with a prior
      * call to analyzeHourlyData.
