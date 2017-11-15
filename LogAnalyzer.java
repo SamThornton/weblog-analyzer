@@ -37,6 +37,7 @@ public class LogAnalyzer
             hourCounts[hour]++;
         }
     }
+    
     /**
      * Return the number of accesses recorded in the log file.
      */
@@ -49,6 +50,22 @@ public class LogAnalyzer
             total = total + hourCounts[hour];
         }
         return total;
+    }    
+    
+    /**
+     * Return the busiest hour.
+     */
+    public int busiestHour()
+    {
+      int busiestHour = 0;
+         for (int hour = 0; hour < hourCounts.length; hour++)
+         {
+             if(hourCounts[hour] > hourCounts[busiestHour])
+             {
+                 busiestHour = hour;
+             }
+         }
+         return busiestHour;  
     }
     
     /**
